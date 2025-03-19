@@ -67,4 +67,13 @@ export class AuthController {
             })
     }
 
+    public prueba = (req: Request, res: Response) => {
+        const accessToken = req.cookies.accessToken
+        const refreshToken = req.cookies.refreshToken
+
+        console.log(accessToken, refreshToken)
+
+        res.json({ message: "Exito", accessToken, refreshToken })
+    }
+
 }
