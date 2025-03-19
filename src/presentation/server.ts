@@ -13,7 +13,8 @@ export class Server {
         this.app.use(cors({
             origin: "*", // ⚠️ Permitir todas (mejor especificar dominio en producción)
             methods: ["GET", "POST", "PUT", "DELETE"],
-            allowedHeaders: ["Content-Type", "Authorization"]
+            allowedHeaders: ["Content-Type", "Authorization"],
+            credentials: true
         }))
         this.app.use(cookieParser())
         this.app.use(express.json())
