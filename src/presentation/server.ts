@@ -11,7 +11,7 @@ export class Server {
 
     private configure() {
         this.app.use(cors({
-            origin: "https://prueba-auth.vercel.app/", 
+            origin: "https://prueba-auth.vercel.app", 
             methods: ["GET", "POST", "PUT", "DELETE"],
             allowedHeaders: ["Content-Type", "Authorization"],
             credentials: true
