@@ -11,8 +11,9 @@ export class Server {
 
     private configure() {
         this.app.use(cors({
-            origin: process.env.CLIENT_URL,
-            credentials: true
+            origin: "*", // ⚠️ Permitir todas (mejor especificar dominio en producción)
+            methods: ["GET", "POST", "PUT", "DELETE"],
+            allowedHeaders: ["Content-Type", "Authorization"]
         }))
         this.app.use(cookieParser())
         this.app.use(express.json())
